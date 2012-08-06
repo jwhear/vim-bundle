@@ -1,3 +1,7 @@
+Install pathogen in ~/.vim/autoload:
+  mkdir -p ~/.vim/autoload
+  curl -so ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+
 Clone into .vim:
   git clone http://github.com/jwhear/vim-bundle.git bundle
 
