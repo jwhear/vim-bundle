@@ -1,18 +1,18 @@
 [submodule "ctrlp.vim"]
 	path = ctrlp.vim
-	url = ./ctrlp.vim/
+	url = git://github.com/kien/ctrlp.vim.git
 [submodule "superman"]
 	path = superman
-	url = ./superman/
+	url = git://github.com/tristen/superman.git
 [submodule "vim-fugitive"]
 	path = vim-fugitive
-	url = ./vim-fugitive/
+	url = git://github.com/tpope/vim-fugitive.git
 [submodule "UltiSnips"]
 	path = UltiSnips
-	url = ./UltiSnips/
+	url = git://github.com/vim-scripts/UltiSnips.git
 [submodule "vim-json"]
 	path = vim-json
-	url = ./vim-json/
+	url = git://github.com/elzr/vim-json.git
 [submodule "vim-colors-solarized"]
 	path = vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
