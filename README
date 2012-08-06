@@ -1,0 +1,6 @@
+Clone into .vim:
+  git clone http://github.com/jwhear/vim-bundle.git bundle
+
+Create symlinks in $HOME:
+  ln -s .vimrc ~/.vimrc
+  ln -s .gvimrc ~/.gvimrc
