@@ -16,3 +16,9 @@
 [submodule "vim-colors-solarized"]
 	path = vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "webapi-vim"]
+	path = webapi-vim
+	url = git://github.com/mattn/webapi-vim.git
+[submodule "Gist.vim"]
+	path = Gist.vim
+	url = git://github.com/vim-scripts/Gist.vim.git
