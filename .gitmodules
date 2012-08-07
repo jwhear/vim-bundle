@@ -22,3 +22,6 @@
 [submodule "Gist.vim"]
 	path = Gist.vim
 	url = git://github.com/vim-scripts/Gist.vim.git
+[submodule "vim-powerline"]
+	path = vim-powerline
+	url = git://github.com/Lokaltog/vim-powerline.git
