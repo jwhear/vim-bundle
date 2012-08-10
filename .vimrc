@@ -143,4 +143,4 @@ au FileType json command -range=% -nargs=* Tidy <line1>,<line2>! json_xs -f json
 noremap <buffer> <silent> <Up>	gk
 noremap <buffer> <silent> <Down> gj
 
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+"set runtimepath^=~/.vim/bundle/ctrlp.vim
