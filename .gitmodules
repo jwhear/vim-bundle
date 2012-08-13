@@ -31,3 +31,6 @@
 [submodule "vim-commentary"]
 	path = vim-commentary
 	url = git://github.com/tpope/vim-commentary.git
+[submodule "syntastic"]
+	path = syntastic
+	url = git://github.com/scrooloose/syntastic.git
