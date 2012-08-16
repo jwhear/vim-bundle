@@ -20,8 +20,8 @@ set foldlevelstart=20
 set scrolloff=3
 
 " Allow whitespace toggling with <leader><s>
-set listchars=tab:>-,trail:·,eol:$
-set list
+"set listchars=tab:>-,trail:·,eol:$
+set list listchars=tab:▸\ ,trail:⋅,nbsp:⋅
 nmap <silent> <leader>s :set nolist!<CR> 
 
 
@@ -47,6 +47,7 @@ set t_Co=16
 
 let g:solarized_visibility = 'low'
 colorscheme solarized
+set background=dark
 
 " toggle light/dark with F12
 call togglebg#map("<F12>")
@@ -142,5 +143,8 @@ au FileType json command -range=% -nargs=* Tidy <line1>,<line2>! json_xs -f json
 
 noremap <buffer> <silent> <Up>	gk
 noremap <buffer> <silent> <Down> gj
+
+nmap <silent> <M-Left> :bp<CR>
+nmap <silent> <M-Right> :bn<CR>
 
 "set runtimepath^=~/.vim/bundle/ctrlp.vim
