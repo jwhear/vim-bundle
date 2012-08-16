@@ -42,11 +42,9 @@ set virtualedit=all
 map <leader>e :e! ~/.vimrc
 autocmd! bufwritepost vimrc source ~/.vimrc
 
-" use solarized
-set t_Co=16
-
-let g:solarized_visibility = 'low'
-colorscheme solarized
+" enable if using solarized
+"set t_Co=16
+colorscheme jellybeans
 set background=dark
 
 " toggle light/dark with F12
