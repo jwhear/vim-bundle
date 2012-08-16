@@ -5,6 +5,9 @@ Install pathogen in ~/.vim/autoload:
 Clone into .vim:
   git clone http://github.com/jwhear/vim-bundle.git bundle
 
+Grab the submodules:
+  git submodule update --init
+
 Create symlinks in $HOME:
   ln -s .vimrc ~/.vimrc
   ln -s .gvimrc ~/.gvimrc
