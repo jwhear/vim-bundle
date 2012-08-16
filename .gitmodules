@@ -34,3 +34,6 @@
 [submodule "syntastic"]
 	path = syntastic
 	url = git://github.com/scrooloose/syntastic.git
+[submodule "jellybeans.vim"]
+	path = jellybeans.vim
+	url = git://github.com/nanotech/jellybeans.vim.git
