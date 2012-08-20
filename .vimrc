@@ -19,10 +19,10 @@ set foldlevelstart=20
 " Start scrolling when near the top or bottom of the window
 set scrolloff=3
 
-" Allow whitespace toggling with <leader><s>
+" Allow whitespace toggling with F6
 "set listchars=tab:>-,trail:·,eol:$
 set list listchars=tab:▸\ ,trail:⋅,nbsp:⋅
-nmap <silent> <leader>s :set nolist!<CR> 
+nnoremap <silent> <F6> :set nolist!<CR> 
 
 
 " start up pathogen
@@ -64,6 +64,9 @@ let g:UltiSnipsSnippetDirectories = ['UltiSnips', 'snippets']
 " fanciness via Powerline:
 let g:Powerline_symbols = 'fancy'
 call Pl#Theme#InsertSegment('fugitive', 'after', 'filename')
+
+" vim-pad notes directory
+let g:pad_dir = '~/.vim/bundle/pad-notes/'
 
 "here is a more exotic version of my original Kwbd script
 "delete the buffer; keep windows; create a scratch buffer if no buffers left
