@@ -24,7 +24,6 @@ set scrolloff=3
 set list listchars=tab:▸\ ,trail:⋅,nbsp:⋅
 nnoremap <silent> <F6> :set nolist!<CR> 
 
-
 " start up pathogen
 call pathogen#infect()
 
@@ -42,15 +41,20 @@ set virtualedit=all
 map <leader>e :e! ~/.vimrc
 autocmd! bufwritepost vimrc source ~/.vimrc
 
-" use solarized
-set t_Co=16
-
-let g:solarized_visibility = 'low'
-colorscheme solarized
+" enable if using solarized
+"set t_Co=16
+set t_Co=256
+colorscheme jellybeans
 set background=dark
 
 " toggle light/dark with F12
 call togglebg#map("<F12>")
+
+
+" make sure whitespace is distinct
+highlight NoText ctermfg=white
+highlight SpecialKey ctermfg=white
+
 
 " Set UltiSnip's snippet search directory
 let g:UltiSnipsSnippetDirectories = ['UltiSnips', 'snippets']
