@@ -40,3 +40,6 @@
 [submodule "vim-easymotion"]
 	path = vim-easymotion
 	url = git://github.com/Lokaltog/vim-easymotion.git
+[submodule "vim-pad"]
+	path = vim-pad
+	url = git://github.com/fmoralesc/vim-pad.git
