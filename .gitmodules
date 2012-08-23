@@ -37,3 +37,6 @@
 [submodule "jellybeans.vim"]
 	path = jellybeans.vim
 	url = git://github.com/nanotech/jellybeans.vim.git
+[submodule "vim-easymotion"]
+	path = vim-easymotion
+	url = git://github.com/Lokaltog/vim-easymotion.git
