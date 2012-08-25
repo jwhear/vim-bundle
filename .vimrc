@@ -134,15 +134,14 @@ function s:Kwbd(kwbdStage)
 command! Bclose call <SID>Kwbd(1)
 nnoremap <silent> <Plug>Kwbd :<C-u>Kwbd<CR>
 
-" Show syntax scope under cursor
-nmap <C-S-P> :call <SID>SynStack()<CR>
+" Show syntax highlighting groups for word under cursor
+nmap <C-S-L> :call <SID>SynStack()<CR>
 function! <SID>SynStack()
   if !exists("*synstack")
     return
   endif
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
-
 nmap <C-TAB> :Tlist<CR>
 
 " running :Tidy
