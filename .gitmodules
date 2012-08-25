@@ -43,3 +43,6 @@
 [submodule "vim-pad"]
 	path = vim-pad
 	url = git://github.com/fmoralesc/vim-pad.git
+[submodule "vim-hexhighlight"]
+	path = vim-hexhighlight
+	url = git://github.com/mybuddymichael/vim-hexhighlight.git
