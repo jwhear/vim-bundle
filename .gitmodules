@@ -46,3 +46,6 @@
 [submodule "vim-jade"]
 	path = vim-jade
 	url = git://github.com/digitaltoad/vim-jade.git
+[submodule "vim-hexhighlight"]
+	path = vim-hexhighlight
+	url = git://github.com/mybuddymichael/vim-hexhighlight.git
