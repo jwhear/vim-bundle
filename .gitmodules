@@ -43,3 +43,6 @@
 [submodule "vim-pad"]
 	path = vim-pad
 	url = git://github.com/fmoralesc/vim-pad.git
+[submodule "vim-jade"]
+	path = vim-jade
+	url = git://github.com/digitaltoad/vim-jade.git
