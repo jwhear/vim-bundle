@@ -29,6 +29,15 @@ call pathogen#infect()
 
 :filetype plugin on
 
+
+" If we don't have an omnicomplete plugin, use the highlighting info
+if has("autocmd") && exists("+omnifunc")
+	autocmd Filetype *
+			\	if &omnifunc == "" |
+		    \		setlocal omnifunc=syntaxcomplete#Complete |
+		    \	endif
+    endif
+
 " Don't beep on errors
 "set vb t_vb=
 
@@ -40,6 +49,9 @@ set virtualedit=all
 " allow fast editing of .vimrc
 map <leader>e :e! ~/.vimrc
 autocmd! bufwritepost vimrc source ~/.vimrc
+
+" Handy for editing Diet templates
+autocmd BufNewFile,BufRead *.html.dt set ft=jade
 
 " enable if using solarized
 "set t_Co=16
