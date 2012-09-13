@@ -49,3 +49,6 @@
 [submodule "vim-hexhighlight"]
 	path = vim-hexhighlight
 	url = git://github.com/mybuddymichael/vim-hexhighlight.git
+[submodule "zencoding-vim"]
+	path = zencoding-vim
+	url = http://github.com/mattn/zencoding-vim.git
