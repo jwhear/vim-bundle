@@ -1,6 +1,5 @@
 
 set number
-set relativenumber
 set nocompatible   " disable vi-compatibility
 set laststatus=2
 set encoding=utf-8
@@ -20,6 +19,17 @@ set foldlevelstart=20
 " Start scrolling when near the top or bottom of the window
 set scrolloff=3
 
+" Use very magic mode by default when searching
+nnoremap / /\v
+vnoremap / /\v
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
+
+" Show a line at 85 chars
+set colorcolumn=85
+
 " Allow whitespace toggling with F6
 "set listchars=tab:>-,trail:·,eol:$
 set list listchars=tab:▸\ ,trail:⋅,nbsp:⋅
@@ -34,16 +44,15 @@ call pathogen#infect()
 " If we don't have an omnicomplete plugin, use the highlighting info
 if has("autocmd") && exists("+omnifunc")
 	autocmd Filetype *
-			\	if &omnifunc == "" |
+		    \	if &omnifunc == "" |
 		    \		setlocal omnifunc=syntaxcomplete#Complete |
 		    \	endif
-    endif
+endif
 
 " Don't beep on errors
 "set vb t_vb=
 
 set ruler
-set incsearch
 
 set virtualedit=all
 
@@ -84,6 +93,9 @@ call Pl#Theme#InsertSegment('fugitive', 'after', 'filename')
 
 " vim-pad notes directory
 let g:pad_dir = '~/.vim/bundle/pad-notes/'
+
+" enable gist plugin
+let g:gist_use_password_in_gitconfig = 1
 
 "here is a more exotic version of my original Kwbd script
 "delete the buffer; keep windows; create a scratch buffer if no buffers left
@@ -148,6 +160,12 @@ command! Bclose call <SID>Kwbd(1)
 nnoremap <silent> <Plug>Kwbd :<C-u>Kwbd<CR>
 
 " Show syntax highlighting groups for word under cursor
+"
+" " Use very magic mode by default when searching
+nnoremap / /\v
+vnoremap / /\v
+set ignorecase
+set smartcase
 nmap <C-S-L> :call <SID>SynStack()<CR>
 function! <SID>SynStack()
   if !exists("*synstack")
@@ -166,4 +184,18 @@ noremap <buffer> <silent> <Down> gj
 nmap <silent> <M-Left> :bp<CR>
 nmap <silent> <M-Right> :bn<CR>
 
+" Map my D REPL plugin to <F4>
+nmap <silent> <F4> :call RunDCode()<CR>
+
 "set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+" Improved handling for really big files
+let g:LargeFile=100
+
+if !exists("large_file_loaded")
+	let large_file_loaded = 1
+	let g:LargeFile = 1024 * 1024 * 100
+	augroup LargeFile
+		autocmd BufReadPre * let f=expand("<afile>") | if getfsize(f) > g:LargeFile | set eventignore+=FileType | setlocal noswapfile bufhidden=unload buftype=nowrite undolevels=-1 | else | set eventignore-=FileType | endif
+	augroup END
+endif
