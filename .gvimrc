@@ -7,6 +7,4 @@ set guioptions-=r
 set guioptions-=m
 set guioptions-=L
 
-" Use solarized
-let g:solarized_visibility = 'low'
-colorscheme solarized
+colorscheme jellybeans
