@@ -5,7 +5,9 @@ set laststatus=2
 set encoding=utf-8
 
 set autoindent
-set smartindent
+
+" Disabled while using smartinput plugin
+"set smartindent
 set autochdir
 set hidden
 
@@ -49,11 +51,7 @@ if has("autocmd") && exists("+omnifunc")
 		    \	endif
 endif
 
-" Don't beep on errors
-"set vb t_vb=
-
 set ruler
-
 set virtualedit=all
 
 " allow fast editing of .vimrc
@@ -68,10 +66,14 @@ autocmd BufNewFile,BufRead *.html.dt set ft=jade
 set t_Co=256
 colorscheme jellybeans
 set background=dark
+if (!has("gui_running"))
+	hi NonText ctermfg=8 guifg=gray
+	hi SpecialKey ctermfg=8 guifg=gray
+endif
+
 
 " toggle light/dark with F12
 call togglebg#map("<F12>")
-
 
 " make sure whitespace is distinct
 highlight NoText ctermfg=white
@@ -80,9 +82,6 @@ highlight SpecialKey ctermfg=white
 
 " Set UltiSnip's snippet search directory
 let g:UltiSnipsSnippetDirectories = ['UltiSnips', 'snippets']
-
-" Dark theme
-" colorscheme wombat
 
 " Light theme
 "colorscheme palladio
@@ -160,12 +159,6 @@ command! Bclose call <SID>Kwbd(1)
 nnoremap <silent> <Plug>Kwbd :<C-u>Kwbd<CR>
 
 " Show syntax highlighting groups for word under cursor
-"
-" " Use very magic mode by default when searching
-nnoremap / /\v
-vnoremap / /\v
-set ignorecase
-set smartcase
 nmap <C-S-L> :call <SID>SynStack()<CR>
 function! <SID>SynStack()
   if !exists("*synstack")
@@ -184,10 +177,14 @@ noremap <buffer> <silent> <Down> gj
 nmap <silent> <M-Left> :bp<CR>
 nmap <silent> <M-Right> :bn<CR>
 
+" Get rid of search highlighting quickly
+nmap <silent> <leader>/ :noh<CR>
+
+" Allow spell-checking to be enable/disabled quickly
+nmap <silent> <F9> :setlocal spell! spelllang=en_us<CR>
+
 " Map my D REPL plugin to <F4>
 nmap <silent> <F4> :call RunDCode()<CR>
-
-"set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " Improved handling for really big files
 let g:LargeFile=100

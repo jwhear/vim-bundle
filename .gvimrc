@@ -1,5 +1,5 @@
 
-set gfn=Ubuntu\ Mono\ 12 
+set gfn=Ubuntu\ Mono\ 15
 
 " Disable most of the GUI
 set guioptions-=T
