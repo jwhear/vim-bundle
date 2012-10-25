@@ -30,7 +30,7 @@ set hlsearch
 set incsearch
 
 " Show a line at 85 chars
-set colorcolumn=85
+set colorcolumn=80
 
 " Allow whitespace toggling with F6
 "set listchars=tab:>-,trail:·,eol:$
