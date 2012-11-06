@@ -7,9 +7,6 @@
 [submodule "vim-fugitive"]
 	path = vim-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
-[submodule "UltiSnips"]
-	path = UltiSnips
-	url = git://github.com/vim-scripts/UltiSnips.git
 [submodule "vim-json"]
 	path = vim-json
 	url = git://github.com/elzr/vim-json.git
@@ -61,3 +58,6 @@
 [submodule "ack.vim"]
 	path = ack.vim
 	url = https://github.com/mileszs/ack.vim.git
+[submodule "ultisnips"]
+	path = ultisnips
+	url = https://github.com/SirVer/ultisnips.git
