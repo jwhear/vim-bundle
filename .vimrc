@@ -29,11 +29,10 @@ set smartcase
 set hlsearch
 set incsearch
 
-" Show a line at 85 chars
+" Show the right margin guide
 set colorcolumn=80
 
 " Allow whitespace toggling with F6
-"set listchars=tab:>-,trail:·,eol:$
 set list listchars=tab:▸\ ,trail:⋅,nbsp:⋅
 nnoremap <silent> <F6> :set nolist!<CR> 
 
@@ -62,18 +61,20 @@ autocmd! bufwritepost vimrc source ~/.vimrc
 autocmd BufNewFile,BufRead *.html.dt set ft=jade
 
 " enable if using solarized
-"set t_Co=16
-set t_Co=256
+if !has("gui_running")
+	"set t_Co=16
+	set t_Co=256
+endif
 colorscheme jellybeans
 set background=dark
-if (!has("gui_running"))
-	hi NonText ctermfg=8 guifg=gray
-	hi SpecialKey ctermfg=8 guifg=gray
-endif
+"if (!has("gui_running"))
+"	hi NonText ctermfg=8 guifg=gray
+"	hi SpecialKey ctermfg=8 guifg=gray
+"endif
 
 
 " toggle light/dark with F12
-call togglebg#map("<F12>")
+"call togglebg#map("<F12>")
 
 " make sure whitespace is distinct
 highlight NoText ctermfg=white
@@ -82,6 +83,9 @@ highlight SpecialKey ctermfg=white
 
 " Set UltiSnip's snippet search directory
 let g:UltiSnipsSnippetDirectories = ['UltiSnips', 'snippets']
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " Light theme
 "colorscheme palladio
