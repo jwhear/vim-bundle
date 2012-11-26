@@ -35,6 +35,8 @@ set colorcolumn=80
 " Allow whitespace toggling with F6
 set list listchars=tab:▸\ ,trail:⋅,nbsp:⋅
 nnoremap <silent> <F6> :set nolist!<CR> 
+" Turn whitespace off by default (we'll enable in .gvimrc)
+set nolist!
 
 " start up pathogen
 call pathogen#infect()
