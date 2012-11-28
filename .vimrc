@@ -192,6 +192,9 @@ nmap <silent> <F9> :setlocal spell! spelllang=en_us<CR>
 " Map my D REPL plugin to <F4>
 nmap <silent> <F4> :call RunDCode()<CR>
 
+" Need sudo to write?
+cmap w!! %!sudo tee > /dev/null %
+
 " Improved handling for really big files
 let g:LargeFile=100
 
