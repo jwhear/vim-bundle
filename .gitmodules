@@ -16,9 +16,6 @@
 [submodule "Gist.vim"]
 	path = Gist.vim
 	url = git://github.com/vim-scripts/Gist.vim.git
-[submodule "vim-powerline"]
-	path = vim-powerline
-	url = https://github.com/Lokaltog/vim-powerline.git
 [submodule "vim-surround"]
 	path = vim-surround
 	url = git://github.com/tpope/vim-surround.git
@@ -76,3 +73,6 @@
 [submodule "vim-argumentative"]
 	path = vim-argumentative
 	url = https://github.com/PeterRincker/vim-argumentative.git
+[submodule "vim-airline"]
+	path = vim-airline
+	url = https://github.com/bling/vim-airline.git
