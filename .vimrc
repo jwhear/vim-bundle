@@ -5,6 +5,7 @@ set laststatus=2
 set encoding=utf-8
 
 set autoindent
+set backspace=indent,eol,start
 
 " Disabled while using smartinput plugin
 set smartindent
@@ -91,6 +92,9 @@ let g:airline_powerline_fonts = 1
 
 " enable gist plugin
 let g:gist_use_password_in_gitconfig = 1
+
+" include database configurations
+source /home/justin/dbext_connections
 
 " Show syntax highlighting groups for word under cursor
 nmap <C-S-L> :call <SID>SynStack()<CR>

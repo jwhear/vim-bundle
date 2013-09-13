@@ -76,3 +76,9 @@
 [submodule "vim-airline"]
 	path = vim-airline
 	url = https://github.com/bling/vim-airline.git
+[submodule "dbext.vim"]
+	path = dbext.vim
+	url = https://github.com/vim-scripts/dbext.vim.git
+[submodule "ag.vim"]
+	path = ag.vim
+	url = https://github.com/vim-scripts/ag.vim.git
