@@ -1,4 +1,5 @@
 
+set relativenumber
 set number
 set nocompatible   " disable vi-compatibility
 set laststatus=2
@@ -19,8 +20,8 @@ set showmatch
 set foldmethod=syntax
 set foldlevelstart=20
 
-" Start scrolling when near the top or bottom of the window
-set scrolloff=3
+" Try to keep the current line centered on the screen
+set scrolloff=999
 
 " Use very magic mode by default when searching
 nnoremap / /\v

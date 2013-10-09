@@ -82,3 +82,9 @@
 [submodule "ag.vim"]
 	path = ag.vim
 	url = https://github.com/vim-scripts/ag.vim.git
+[submodule "vim-sol"]
+	path = vim-sol
+	url = https://github.com/Pychimp/vim-sol.git
+[submodule "vim-luna"]
+	path = vim-luna
+	url = https://github.com/Pychimp/vim-luna.git
