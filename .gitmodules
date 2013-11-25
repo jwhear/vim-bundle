@@ -88,3 +88,6 @@
 [submodule "vim-luna"]
 	path = vim-luna
 	url = https://github.com/Pychimp/vim-luna.git
+[submodule "sideways.vim"]
+	path = sideways.vim
+	url = https://github.com/AndrewRadev/sideways.vim.git
