@@ -103,3 +103,6 @@
 [submodule "vim-vinegar"]
 	path = vim-vinegar
 	url = https://github.com/tpope/vim-vinegar.git
+[submodule "delimitMate"]
+	path = delimitMate
+	url = https://github.com/Raimondi/delimitMate.git
