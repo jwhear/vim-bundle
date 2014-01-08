@@ -88,3 +88,21 @@
 [submodule "vim-luna"]
 	path = vim-luna
 	url = https://github.com/Pychimp/vim-luna.git
+[submodule "vim-ddl"]
+	path = vim-ddl
+	url = https://gitlab.economicmodeling.com/justin/vim-ddl.git
+[submodule "sideways.vim"]
+	path = sideways.vim
+	url = https://github.com/AndrewRadev/sideways.vim.git
+[submodule "vim-hybrid"]
+	path = vim-hybrid
+	url = https://github.com/w0ng/vim-hybrid.git
+[submodule "dragvisuals.vim"]
+	path = dragvisuals.vim
+	url = https://github.com/jondkinney/dragvisuals.vim.git
+[submodule "emmet-vim"]
+	path = emmet-vim
+	url = https://github.com/mattn/emmet-vim.git
+[submodule "vim-vinegar"]
+	path = vim-vinegar
+	url = https://github.com/tpope/vim-vinegar.git

@@ -13,6 +13,9 @@ set smartindent
 set autochdir
 set hidden
 
+" No swap-files please
+set noswapfile
+
 set tabstop=4
 set shiftwidth=4
 
@@ -21,7 +24,7 @@ set foldmethod=syntax
 set foldlevelstart=20
 
 " Try to keep the current line centered on the screen
-set scrolloff=999
+"set scrolloff=999
 
 " Use very magic mode by default when searching
 nnoremap / /\v
@@ -30,6 +33,9 @@ set ignorecase
 set smartcase
 set hlsearch
 set incsearch
+
+" Flip colon and semi-colon (avoid having to do SHIFT-;)
+nmap ; :
 
 " Show the right margin guide
 set colorcolumn=80
@@ -71,7 +77,7 @@ if !has("gui_running")
 	"set t_Co=16
 	set t_Co=256
 endif
-colorscheme jellybeans
+colorscheme hybrid
 set background=dark
 
 " make sure whitespace is distinct
@@ -88,8 +94,23 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " Light theme
 "colorscheme palladio
 
-" Let Airline use fancy Powerline fonts
-let g:airline_powerline_fonts = 1
+" Let Airline use fancy unicode symbols
+let g:airline_section_warning = ''
+if !exists('g:airline_symbols')
+	let g:airline_symbols = {}
+endif
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
 
 " enable gist plugin
 let g:gist_use_password_in_gitconfig = 1
@@ -113,14 +134,29 @@ au FileType json command -range=% -nargs=* Tidy <line1>,<line2>! json_xs -f json
 noremap <buffer> <silent> <Up>	gk
 noremap <buffer> <silent> <Down> gj
 
-nmap <silent> <M-Left> :bp<CR>
-nmap <silent> <M-Right> :bn<CR>
+nmap <silent> <M-Left> ;bp<CR>
+nmap <silent> <M-Right> ;bn<CR>
+
+" Damien Conway's DragVisual plugin:
+vmap  <expr>  <LEFT>   DVB_Drag('left')
+vmap  <expr>  <RIGHT>  DVB_Drag('right')
+vmap  <expr>  <DOWN>   DVB_Drag('down')
+vmap  <expr>  <UP>     DVB_Drag('up')
+vmap  <expr>  D        DVB_Duplicate()
 
 " Get rid of search highlighting quickly
 nmap <silent> <leader>/ :noh<CR>
 
 " Allow spell-checking to be enable/disabled quickly
 nmap <silent> <F9> :setlocal spell! spelllang=en_us<CR>
+
+" Sideways plugin provides some new text objects
+nnoremap <c-h> :SidewaysLeft<cr>
+nnoremap <c-l> :SidewaysRight<cr>
+omap aa <Plug>SidewaysArgumentTextobjA
+xmap aa <Plug>SidewaysArgumentTextobjA
+omap ia <Plug>SidewaysArgumentTextobjI
+xmap ia <Plug>SidewaysArgumentTextobjI
 
 " Need sudo to write?
 cmap w!! %!sudo tee > /dev/null %
@@ -135,3 +171,19 @@ if !exists("large_file_loaded")
 		autocmd BufReadPre * let f=expand("<afile>") | if getfsize(f) > g:LargeFile | set eventignore+=FileType | setlocal noswapfile bufhidden=unload buftype=nowrite undolevels=-1 | else | set eventignore-=FileType | endif
 	augroup END
 endif
+
+" Some online help for D code
+function! OnlineDoc()
+  if &ft == "d"
+    let s:urlTemplate = "google.com/search?q=site:dlang.org+*"
+  else
+    return
+  endif
+  let s:browser = "google-chrome"
+  let s:wordUnderCursor = expand("<cword>")
+  let s:url = substitute(s:urlTemplate, "*", s:wordUnderCursor, "g")
+  let s:cmd = "silent !" . s:browser . " " . s:url . "&"
+  execute s:cmd
+endfunction
+" Online doc search.
+map <silent> <M-d> :call OnlineDoc()<CR>

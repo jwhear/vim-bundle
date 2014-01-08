@@ -8,7 +8,7 @@ set guioptions-=m
 set guioptions-=L
 set guioptions-=e
 
-colorscheme jellybeans
+colorscheme hybrid
 
 " Enable whitespace display
 set list!
