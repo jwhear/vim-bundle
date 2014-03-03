@@ -158,6 +158,9 @@ xmap aa <Plug>SidewaysArgumentTextobjA
 omap ia <Plug>SidewaysArgumentTextobjI
 xmap ia <Plug>SidewaysArgumentTextobjI
 
+" Properly indent braces with delimitMate
+let g:delimitMate_expand_cr = 1
+
 " Need sudo to write?
 cmap w!! %!sudo tee > /dev/null %
 
