@@ -115,6 +115,3 @@
 [submodule "vim-pencil"]
 	path = vim-pencil
 	url = https://github.com/reedes/vim-pencil.git
-[submodule "DSnips"]
-	path = DSnips
-	url = https://github.com/kiith-sa/DSnips.git
