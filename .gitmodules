@@ -61,9 +61,6 @@
 [submodule "vim-startify"]
 	path = vim-startify
 	url = https://github.com/mhinz/vim-startify.git
-[submodule "vim-css-color"]
-	path = vim-css-color
-	url = https://github.com/skammer/vim-css-color.git
 [submodule "vim-mustang"]
 	path = vim-mustang
 	url = https://github.com/marcus/vim-mustang.git
@@ -106,3 +103,18 @@
 [submodule "targets.vim"]
 	path = targets.vim
 	url = git://github.com/wellle/targets.vim.git
+[submodule "moria"]
+	path = moria
+	url = https://github.com/vim-scripts/moria.git
+[submodule "vim-thematic"]
+	path = vim-thematic
+	url = https://github.com/reedes/vim-thematic.git
+[submodule "vim-colors-pencil"]
+	path = vim-colors-pencil
+	url = https://github.com/reedes/vim-colors-pencil.git
+[submodule "vim-pencil"]
+	path = vim-pencil
+	url = https://github.com/reedes/vim-pencil.git
+[submodule "DSnips"]
+	path = DSnips
+	url = https://github.com/kiith-sa/DSnips.git
