@@ -20,11 +20,7 @@ set tabstop=4
 set shiftwidth=4
 
 set showmatch
-set foldmethod=syntax
 set foldlevelstart=20
-
-" Try to keep the current line centered on the screen
-"set scrolloff=999
 
 " Use very magic mode by default when searching
 nnoremap / /\v
@@ -40,6 +36,7 @@ nmap ; :
 " Show the right margin guide
 set colorcolumn=80
 
+"
 syntax enable
 
 " Allow whitespace toggling with F6
@@ -69,16 +66,11 @@ set virtualedit=all
 map <leader>e :e! ~/.vimrc
 autocmd! bufwritepost vimrc source ~/.vimrc
 
-" Handy for editing Diet templates
-autocmd BufNewFile,BufRead *.html.dt set ft=jade
-
 " enable if using solarized
 if !has("gui_running")
 	"set t_Co=16
 	set t_Co=256
 endif
-colorscheme hybrid
-set background=dark
 
 " make sure whitespace is distinct
 highlight NoText ctermfg=white
@@ -86,13 +78,13 @@ highlight SpecialKey ctermfg=white
 
 
 " Set UltiSnip's snippet search directory
-let g:UltiSnipsSnippetDirectories = ['UltiSnips', 'snippets']
+let g:UltiSnipsSnippetDirectories = ['UltiSnips']
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
-" Light theme
-"colorscheme palladio
+" Brace matching can be annoying in the terminal
+hi MatchParen cterm=underline ctermbg=none ctermfg=blue
 
 " Let Airline use fancy unicode symbols
 let g:airline_section_warning = ''
@@ -100,9 +92,9 @@ if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
 endif
 let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
+let g:airline_left_sep = '▒░'
 let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
+let g:airline_right_sep = '░▒'
 let g:airline_symbols.linenr = '␊'
 let g:airline_symbols.linenr = '␤'
 let g:airline_symbols.linenr = '¶'
@@ -116,7 +108,10 @@ let g:airline_symbols.whitespace = 'Ξ'
 let g:gist_use_password_in_gitconfig = 1
 
 " include database configurations
-source /home/justin/dbext_connections
+" source /home/justin/dbext_connections
+
+" Make space toggle folds
+nmap <Space> za
 
 " Show syntax highlighting groups for word under cursor
 nmap <C-S-L> :call <SID>SynStack()<CR>
@@ -136,13 +131,6 @@ noremap <buffer> <silent> <Down> gj
 
 nmap <silent> <M-Left> ;bp<CR>
 nmap <silent> <M-Right> ;bn<CR>
-
-" Damien Conway's DragVisual plugin:
-vmap  <expr>  <LEFT>   DVB_Drag('left')
-vmap  <expr>  <RIGHT>  DVB_Drag('right')
-vmap  <expr>  <DOWN>   DVB_Drag('down')
-vmap  <expr>  <UP>     DVB_Drag('up')
-vmap  <expr>  D        DVB_Duplicate()
 
 " Get rid of search highlighting quickly
 nmap <silent> <leader>/ :noh<CR>
@@ -188,5 +176,49 @@ function! OnlineDoc()
   let s:cmd = "silent !" . s:browser . " " . s:url . "&"
   execute s:cmd
 endfunction
+
 " Online doc search.
 map <silent> <M-d> :call OnlineDoc()<CR>
+
+" DCD completion
+let g:dcd_importPath=['/home/justin/.dvm/compilers/dmd-2.065.0/src/phobos/','/home/justin/.dvm/compilers/dmd-2.065.0/src/druntime/import']
+nmap <silent> <leader>l :DCDsymbolLocation<CR>
+
+" Handy for editing Diet templates
+autocmd BufNewFile,BufRead *.html.dt set ft=jade
+
+" D interface files
+au BufNewFile,BufRead *.di set filetype=d
+
+" Thematic color schemes
+let g:thematic#defaults = {
+\ 'background': 'dark',
+\ 'typeface': 'Ubuntu Mono',
+\ 'font-size': 15
+\ }
+
+let g:thematic#themes = {
+\ 'hybrid'   : { 'colorscheme': 'hybrid',
+\              },
+\ 'hybrid-light': { 'colorscheme': 'hybrid-light',
+\                   'background': 'light'
+\              },
+\ 'matrix'   : { 'colorscheme': 'matrix',
+\                'typeface': 'Dot Matrix',
+\                'font-size': 15
+\              },
+\ 'prose'    : { 'colorscheme': 'pencil',
+\                'background': 'light',
+\                'linespace':2,
+\                'airline-theme': 'base16'
+\              }
+\ }
+
+let g:thematic#theme_name = 'hybrid'
+
+" vim-easy-align
+" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+vmap <Enter> <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. <Leader>aip)
+nmap <Leader>a <Plug>(EasyAlign)

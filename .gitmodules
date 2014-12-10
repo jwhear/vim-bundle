@@ -88,9 +88,6 @@
 [submodule "vim-hybrid"]
 	path = vim-hybrid
 	url = https://github.com/w0ng/vim-hybrid.git
-[submodule "dragvisuals.vim"]
-	path = dragvisuals.vim
-	url = https://github.com/jondkinney/dragvisuals.vim.git
 [submodule "emmet-vim"]
 	path = emmet-vim
 	url = https://github.com/mattn/emmet-vim.git
@@ -112,6 +109,9 @@
 [submodule "vim-colors-pencil"]
 	path = vim-colors-pencil
 	url = https://github.com/reedes/vim-colors-pencil.git
-[submodule "vim-pencil"]
-	path = vim-pencil
-	url = https://github.com/reedes/vim-pencil.git
+[submodule "sweater"]
+	path = sweater
+	url = https://github.com/nice/sweater.git
+[submodule "vim-easy-align"]
+	path = vim-easy-align
+	url = https://github.com/junegunn/vim-easy-align.git
